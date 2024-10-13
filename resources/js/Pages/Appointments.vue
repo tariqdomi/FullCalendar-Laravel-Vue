@@ -3,6 +3,7 @@ import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import timeGridPlugin from '@fullcalendar/timegrid'
+import multiMonthPlugin from '@fullcalendar/multimonth'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, usePage } from '@inertiajs/vue3';
 import { ref } from 'vue';
@@ -12,10 +13,10 @@ const { props } = usePage();
 
 
 const calendarOptions = ref({
-    plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
+    plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin, multiMonthPlugin],
     initialView: 'dayGridMonth',
     headerToolbar: {
-        start: 'dayGridMonth timeGridWeek timeGridDay',
+        start: 'dayGridMonth timeGridWeek timeGridDay multiMonthYear',
         center: 'title',
         end: 'today prev next'
     },
@@ -39,7 +40,7 @@ const calendarOptions = ref({
             </h2>
         </template>
 
-        <div class="py-12">
+        <div class="py-4">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <FullCalendar :options="calendarOptions" />
