@@ -4,8 +4,11 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, usePage } from '@inertiajs/vue3';
 import { ref } from 'vue';
+
+const { props } = usePage();
+
 
 
 const calendarOptions = ref({
@@ -16,7 +19,12 @@ const calendarOptions = ref({
         center: 'title',
         end: 'today prev next'
     },
-    slotMinTime: "08:00:00"
+    slotMinTime: "08:00:00",
+    events: props.appointments.map(appointment => ({
+        title: appointment.title,
+        start: appointment.start,
+        end: appointment.end,
+    })),
 });
 </script>
 
@@ -34,6 +42,7 @@ const calendarOptions = ref({
         <div class="py-12">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+                    <FullCalendar :options="calendarOptions" />
                 </div>
             </div>
         </div>
