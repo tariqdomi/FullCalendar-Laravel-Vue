@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import multiMonthPlugin from '@fullcalendar/multimonth'
+import listPlugin from '@fullcalendar/list';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, usePage } from '@inertiajs/vue3';
 import { ref } from 'vue';
@@ -13,19 +14,29 @@ const { props } = usePage();
 
 
 const calendarOptions = ref({
-    plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin, multiMonthPlugin],
+    plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin, multiMonthPlugin, listPlugin],
     initialView: 'dayGridMonth',
     headerToolbar: {
         start: 'dayGridMonth timeGridWeek timeGridDay multiMonthYear',
         center: 'title',
-        end: 'today prev next'
+        end: 'listWeek today prev next'
     },
+    slotEventOverlap: false,
     slotMinTime: "08:00:00",
+    slotMaxTime: "18:30:00",
     events: props.appointments.map(appointment => ({
         title: appointment.title,
         start: appointment.start,
         end: appointment.end,
     })),
+    // eventClick: (info) => {
+    //     alert('Event: ' + info.event.title);
+    //     alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+    //     alert('View: ' + info.view.type);
+
+    //     // change the border color just for fun
+    //     info.el.style.borderColor = 'red';
+    // },
 });
 </script>
 

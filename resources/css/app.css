@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fc .fc-button-primary {
+    background-color: blue;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+    background-color: red;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+    margin: 10px 0 10px 0;
+    padding: 0px 10px 0 10px;
+}

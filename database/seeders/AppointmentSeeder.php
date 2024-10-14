@@ -19,6 +19,33 @@ class AppointmentSeeder extends Seeder
             'end' => '2024-10-15 11:00:00',
             'description' => 'Routine check-up',
         ]);
+        Appointment::create([
+            'title' => 'Doctor Appointment B',
+            'start' => '2024-10-15 10:30:00',
+            'end' => '2024-10-15 11:30:00',
+            'description' => 'Routine check-up',
+        ]);
+
+        Appointment::create([
+            'title' => 'Doctor Appointment C',
+            'start' => '2024-10-15 12:30:00',
+            'end' => '2024-10-15 13:30:00',
+            'description' => 'Routine check-up',
+        ]);
+
+        Appointment::create([
+            'title' => 'Doctor Appointment D',
+            'start' => '2024-10-15 12:15:00',
+            'end' => '2024-10-15 13:30:00',
+            'description' => 'Routine check-up',
+        ]);
+
+        Appointment::create([
+            'title' => 'Doctor Appointment E',
+            'start' => '2024-10-15 12:30:00',
+            'end' => '2024-10-15 12:45:00',
+            'description' => 'Routine check-up',
+        ]);
 
         Appointment::create([
             'title' => 'Dental Appointment',
