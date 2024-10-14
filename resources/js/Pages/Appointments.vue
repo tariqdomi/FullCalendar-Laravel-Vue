@@ -43,6 +43,14 @@ const calendarOptions = ref({
         // change the border color just for fun
         info.el.style.borderColor = 'red';
     },
+    eventMouseEnter: (info) => {
+        // Change cursor style to pointer on mouse enter
+        info.el.style.cursor = 'pointer';
+    },
+    eventMouseLeave: (info) => {
+        // Reset cursor style on mouse leave (optional)
+        info.el.style.cursor = '';
+    },
 });
 </script>
 
