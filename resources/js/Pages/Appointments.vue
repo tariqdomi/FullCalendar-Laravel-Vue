@@ -22,21 +22,27 @@ const calendarOptions = ref({
         end: 'listWeek today prev next'
     },
     slotEventOverlap: false,
+    slotDuration: "00:15:00", // default 30
     slotMinTime: "08:00:00",
     slotMaxTime: "18:30:00",
+    slotLabelFormat: {
+        hour: 'numeric',
+        minute: '2-digit',
+        omitZeroMinute: false,
+    },
     events: props.appointments.map(appointment => ({
         title: appointment.title,
         start: appointment.start,
         end: appointment.end,
     })),
-    // eventClick: (info) => {
-    //     alert('Event: ' + info.event.title);
-    //     alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-    //     alert('View: ' + info.view.type);
+    eventClick: (info) => {
+        alert('Event: ' + info.event.title);
+        alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+        alert('View: ' + info.view.type);
 
-    //     // change the border color just for fun
-    //     info.el.style.borderColor = 'red';
-    // },
+        // change the border color just for fun
+        info.el.style.borderColor = 'red';
+    },
 });
 </script>
 
