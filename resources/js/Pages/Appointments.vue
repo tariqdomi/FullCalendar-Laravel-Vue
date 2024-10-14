@@ -51,6 +51,27 @@ const calendarOptions = ref({
         // Reset cursor style on mouse leave (optional)
         info.el.style.cursor = '';
     },
+    // Set the max height for the calendar
+    //height: 650, // Sets the height of the entire calendar, including header and footer. Automatically adjust the height based on content
+    //contentHeight: 200, //Sets the height of the view area of the calendar.
+    //maxHeight: 2000, // Set your desired max height (in pixels)
+    //aspectRatio: 1.8,
+    expandRows: true,
+    fixedWeekCount: false,
+    nowIndicator: true,
+    businessHours: true,
+    businessHours: [ // specify an array instead
+        {
+            daysOfWeek: [1, 2, 3], // Monday, Tuesday, Wednesday
+            startTime: '08:00', // 8am
+            endTime: '18:00' // 6pm
+        },
+        {
+            daysOfWeek: [4, 5], // Thursday, Friday
+            startTime: '10:00', // 10am
+            endTime: '16:00' // 4pm
+        }
+    ]
 });
 </script>
 
@@ -66,8 +87,8 @@ const calendarOptions = ref({
         </template>
 
         <div class="py-4">
-            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+            <div class="flex flex-col mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="flex-1 overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <FullCalendar :options="calendarOptions" />
                 </div>
             </div>
