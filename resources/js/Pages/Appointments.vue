@@ -48,10 +48,12 @@ const calendarOptions = ref({
         minute: '2-digit',
         omitZeroMinute: false,
     },
+    // eventColor: 'green',
     events: props.appointments.map(appointment => ({
         title: appointment.title,
         start: appointment.start,
         end: appointment.end,
+        color: 'green',
     })),
     eventClick: (info) => {
         alert('Event: ' + info.event.title);
