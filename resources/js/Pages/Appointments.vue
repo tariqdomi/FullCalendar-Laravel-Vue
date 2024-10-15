@@ -36,6 +36,8 @@ const calendarOptions = ref({
         center: 'title',
         end: 'myCustomButton listWeek today prev next'
     },
+    //dayMaxEventRows: 2,
+    dayMaxEvents: true,
     allDaySlot: false,
     slotEventOverlap: false,
     slotDuration: "00:15:00", // default 30
@@ -68,7 +70,7 @@ const calendarOptions = ref({
         info.el.style.cursor = '';
     },
     // Set the max height for the calendar
-    //height: 650, // Sets the height of the entire calendar, including header and footer. Automatically adjust the height based on content
+    height: 750, // Sets the height of the entire calendar, including header and footer. Automatically adjust the height based on content
     //contentHeight: 200, //Sets the height of the view area of the calendar.
     //maxHeight: 2000, // Set your desired max height (in pixels)
     //aspectRatio: 1.8,
