@@ -12,10 +12,6 @@
 }
 
 .fc .fc-toolbar.fc-header-toolbar {
-    margin: 10px 0 10px 0;
+    margin: 5px 0 5px 0;
     padding: 0px 10px 0 10px;
 }
-
-/* .fc-event {
-    cursor: pointer;
-} */

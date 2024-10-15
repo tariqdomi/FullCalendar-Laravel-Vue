@@ -13,14 +13,30 @@ const { props } = usePage();
 
 
 
+const cells = document.querySelectorAll('.fc-daygrid-day');
+cells.forEach(cell => {
+    cell.style.height = '20px'; // Set your desired height
+});
+
+
+
 const calendarOptions = ref({
     plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin, multiMonthPlugin, listPlugin],
     initialView: 'dayGridMonth',
-    headerToolbar: {
-        start: 'dayGridMonth timeGridWeek timeGridDay multiMonthYear',
-        center: 'title',
-        end: 'listWeek today prev next'
+    customButtons: {
+        myCustomButton: {
+            text: 'custom',
+            click: function () {
+                alert('clicked the custom button!');
+            }
+        }
     },
+    headerToolbar: {
+        start: 'dayGridMonth timeGridWeek timeGridDay multiMonthYear dayGridWeek',
+        center: 'title',
+        end: 'myCustomButton listWeek today prev next'
+    },
+    allDaySlot: false,
     slotEventOverlap: false,
     slotDuration: "00:15:00", // default 30
     slotMinTime: "08:00:00",
@@ -56,13 +72,13 @@ const calendarOptions = ref({
     //contentHeight: 200, //Sets the height of the view area of the calendar.
     //maxHeight: 2000, // Set your desired max height (in pixels)
     //aspectRatio: 1.8,
-    expandRows: true,
+    expandRows: false,
     fixedWeekCount: false,
     nowIndicator: true,
-    businessHours: true,
+    //businessHours: true,
     businessHours: [ // specify an array instead
         {
-            daysOfWeek: [1, 2, 3], // Monday, Tuesday, Wednesday
+            daysOfWeek: [0, 1, 2, 3], // Monday, Tuesday, Wednesday
             startTime: '08:00', // 8am
             endTime: '18:00' // 6pm
         },
@@ -71,7 +87,8 @@ const calendarOptions = ref({
             startTime: '10:00', // 10am
             endTime: '16:00' // 4pm
         }
-    ]
+    ],
+    eventDisplay: 'list-item',
 });
 </script>
 
