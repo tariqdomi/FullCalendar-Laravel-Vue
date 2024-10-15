@@ -53,7 +53,7 @@ const calendarOptions = ref({
         title: appointment.title,
         start: appointment.start,
         end: appointment.end,
-        color: 'green',
+        color: false ? 'green' : 'red',
     })),
     eventClick: (info) => {
         alert('Event: ' + info.event.title);
