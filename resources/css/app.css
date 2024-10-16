@@ -15,3 +15,8 @@
     margin: 5px 0 5px 0;
     padding: 0px 10px 0 10px;
 }
+
+.fc .fc-daygrid-day.fc-day-today,
+.fc .fc-timegrid-col.fc-day-today {
+    background-color: rgb(226, 240, 254);
+}
