@@ -53,7 +53,7 @@ const calendarOptions = ref({
         title: appointment.title,
         start: appointment.start,
         end: appointment.end,
-        color: false ? 'green' : 'red',
+        color: true ? 'green' : 'red',
     })),
     eventClick: (info) => {
         alert('Event: ' + info.event.title);
@@ -93,6 +93,7 @@ const calendarOptions = ref({
         }
     ],
     eventDisplay: 'list-item',
+    navLinks: true,
 });
 </script>
 
