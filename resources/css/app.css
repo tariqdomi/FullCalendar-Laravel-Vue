@@ -20,3 +20,18 @@
 .fc .fc-timegrid-col.fc-day-today {
     background-color: rgb(226, 240, 254);
 }
+
+/* 
+div .fc-view-harness-active {
+    max-height: 631px !important;
+}
+
+.fc-scrollgrid-sync-table {
+    max-height: 600px !important;
+} */
+
+/* td .fc-daygrid-day {
+    height: 30px !important;
+    max-height: 50px !important;
+    background-color: #ffe8e8;
+} */
