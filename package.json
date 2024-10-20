@@ -24,6 +24,7 @@
         "@fullcalendar/list": "^6.1.15",
         "@fullcalendar/multimonth": "^6.1.15",
         "@fullcalendar/timegrid": "^6.1.15",
-        "@fullcalendar/vue3": "^6.1.15"
+        "@fullcalendar/vue3": "^6.1.15",
+        "primevue": "^4.1.1"
     }
 }
