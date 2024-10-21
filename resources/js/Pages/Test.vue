@@ -55,6 +55,10 @@
             <div class="card flex justify-center">
                 <DatePicker v-model="date" />
             </div>
+
+            <div class="card">
+                <Menubar :model="items" />
+            </div>
         </div>
     </AuthenticatedLayout>
 
@@ -68,6 +72,8 @@ import Button from "primevue/button"
 import Dialog from 'primevue/dialog';
 import InputText from 'primevue/inputtext';
 import FloatLabel from 'primevue/floatlabel';
+import Menubar from 'primevue/menubar';
+
 
 import DatePicker from 'primevue/datepicker';
 
@@ -86,5 +92,53 @@ const value2 = ref(null);
 const value3 = ref(null);
 
 const date = ref();
+
+
+const items = ref([
+    {
+        label: 'Home',
+        icon: 'pi pi-home'
+    },
+    {
+        label: 'Features',
+        icon: 'pi pi-star'
+    },
+    {
+        label: 'Projects',
+        icon: 'pi pi-search',
+        items: [
+            {
+                label: 'Components',
+                icon: 'pi pi-bolt'
+            },
+            {
+                label: 'Blocks',
+                icon: 'pi pi-server'
+            },
+            {
+                label: 'UI Kit',
+                icon: 'pi pi-pencil'
+            },
+            {
+                label: 'Templates',
+                icon: 'pi pi-palette',
+                items: [
+                    {
+                        label: 'Apollo',
+                        icon: 'pi pi-palette'
+                    },
+                    {
+                        label: 'Ultima',
+                        icon: 'pi pi-palette'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        label: 'Contact',
+        icon: 'pi pi-envelope'
+    }
+]);
 
 </script>
