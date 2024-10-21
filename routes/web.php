@@ -8,6 +8,10 @@ use App\Http\Controllers\AppointmentController;
 
 Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments');
 
+Route::get('/test', function () {
+    return Inertia::render('Test', []);
+})->name('appointments');
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
