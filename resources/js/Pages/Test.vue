@@ -10,6 +10,22 @@
         </template>
 
         <div class="py-4">
+            <div class="card flex flex-wrap justify-center items-end gap-4">
+                <FloatLabel>
+                    <InputText id="over_label" v-model="value1" />
+                    <label for="over_label">Over Label</label>
+                </FloatLabel>
+
+                <FloatLabel variant="in">
+                    <InputText id="in_label" v-model="value2" variant="filled" />
+                    <label for="in_label">In Label</label>
+                </FloatLabel>
+
+                <FloatLabel variant="on">
+                    <InputText id="on_label" v-model="value3" />
+                    <label for="on_label">On Label</label>
+                </FloatLabel>
+            </div>
             <div class="card flex justify-center">
                 <div class="w-56">
                     <InputText v-model.number="value" class="w-full mb-4" />
@@ -35,6 +51,10 @@
                     </div>
                 </Dialog>
             </div>
+
+            <div class="card flex justify-center">
+                <DatePicker v-model="date" />
+            </div>
         </div>
     </AuthenticatedLayout>
 
@@ -47,6 +67,10 @@ import { ref, onMounted } from 'vue';
 import Button from "primevue/button"
 import Dialog from 'primevue/dialog';
 import InputText from 'primevue/inputtext';
+import FloatLabel from 'primevue/floatlabel';
+
+import DatePicker from 'primevue/datepicker';
+
 
 import Slider from 'primevue/slider';
 
@@ -56,4 +80,11 @@ import Slider from 'primevue/slider';
 const value = ref(null);
 
 const visible = ref(false);
+
+const value1 = ref(null);
+const value2 = ref(null);
+const value3 = ref(null);
+
+const date = ref();
+
 </script>
