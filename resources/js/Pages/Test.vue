@@ -59,6 +59,9 @@
             <div class="card">
                 <Menubar :model="items" />
             </div>
+
+            <Button label="Toggle Dark Mode" @click="toggleDarkMode()" />
+
         </div>
     </AuthenticatedLayout>
 
@@ -140,5 +143,9 @@ const items = ref([
         icon: 'pi pi-envelope'
     }
 ]);
+
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('my-app-dark');
+}
 
 </script>
