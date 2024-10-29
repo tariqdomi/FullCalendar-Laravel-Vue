@@ -78,7 +78,7 @@ const monthTitle = computed(() => {
 const generateCalendarDays = () => {
     if (isNaN(dateInstance)) {
         console.error('Invalid selectedDate prop:', props.selectedDate);
-        return; // Exit if selectedDate is invalid
+        return;
     }
 
     const firstDayOfMonth = new Date(dateInstance.getFullYear(), dateInstance.getMonth(), 1);
