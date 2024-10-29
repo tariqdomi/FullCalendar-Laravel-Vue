@@ -4,9 +4,12 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\AppointmentController;
 
 Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments');
+
+Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar');
 
 Route::get('/test', function () {
     return Inertia::render('Test', []);
